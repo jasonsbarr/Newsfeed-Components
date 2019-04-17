@@ -19,11 +19,11 @@ const createArticle = function(articleElement) {
 
 // article object prototype
 const articleProto = {
-  registerEventHandlers: function() {
+  registerEventHandlers() {
     this.articleElement.addEventListener('click', this.toggleExpandArticle);
   },
 
-  toggleExpandArticle: (event) => {
+  toggleExpandArticle(event) {
     if (event.target.classList.contains('expandButton')) {
       event.currentTarget.classList.toggle('article-open');
     }
