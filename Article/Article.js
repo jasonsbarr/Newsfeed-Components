@@ -31,6 +31,4 @@ const articleProto = {
 };
 
 // Create array of articles
-const articles = [...document.querySelectorAll('.article')].map(elem => {
-  return createArticle(elem);
-});
+const articles = [...document.querySelectorAll('.article')].map(elem => createArticle(elem));
