@@ -1,9 +1,13 @@
-// Because classes are not hoisted you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
-
+/**
+ * Factory function to create article objects
+ * 
+ * @param {HTMLElement} articleElement container for a single article object
+ * @return {Object}
+ */
 const createArticle = function(articleElement) {
   const article = {
     __proto__: articleProto,
-    articleElement: articleElement,
+    articleElement,
     expandButton: articleElement.querySelector('.expandButton'),
   };
 
@@ -13,6 +17,7 @@ const createArticle = function(articleElement) {
   return article;
 };
 
+// article object prototype
 const articleProto = {
   registerEventHandlers: function() {
     this.articleElement.addEventListener('click', this.toggleExpandArticle);
@@ -25,6 +30,7 @@ const articleProto = {
   }
 };
 
+// Create array of articles
 const articles = [...document.querySelectorAll('.article')].map(elem => {
   return createArticle(elem);
 });
