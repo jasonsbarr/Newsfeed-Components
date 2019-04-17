@@ -11,11 +11,7 @@ const Menu = (function(menu) {
     return menu.classList.toggle('menu--open');
   }
 
-  const init = function() {
-    registerEventHandlers();
-  }
-  return {
-    init,
-  };
+  registerEventHandlers();
+
   // Start Here: Create a reference to the ".menu" class
-})(document.querySelector('.menu')).init();
+})(document.querySelector('.menu'));
